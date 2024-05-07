@@ -17,7 +17,7 @@ function startConexion() {
             console.log("Conexión WebSocket cerrada");
         };
     }
-    socket = new WebSocket("ws://localhost:8089");
+    socket = new WebSocket("ws://server-iota-taupe.vercel.app");
     socket.onopen = () => {
         console.log("Conexión WebSocket establecida");
     };
@@ -32,7 +32,7 @@ function registerUser() {
         },
         body: JSON.stringify(user)
     };
-    const url = 'http://localhost:8089/register';
+    const url = 'https://server-iota-taupe.vercel.app/register';
     return fetch(url, options)
         .then(response => {
             const contentType = response.headers.get('content-type');
@@ -79,7 +79,7 @@ function loginUser() {
         },
         body: JSON.stringify(user)
     };
-    const url = 'http://localhost:8089/login';
+    const url = 'https://server-iota-taupe.vercel.app/login';
     return fetch(url, options)
         .then(response => {
             const contentType = response.headers.get('content-type');
@@ -119,7 +119,7 @@ function loginUser() {
 
 function startWebSocket(nick) {
     
-    socket = new WebSocket("ws://localhost:8089");
+    socket = new WebSocket("ws://server-iota-taupe.vercel.app");
     socket.nick = nick;
     socket.onopen = () => {
         console.log("Conexión WebSocket establecida");
