@@ -159,7 +159,22 @@ const ws_server = new WebSocketServer({httpServer:server,autoAcceptConnections:f
 ws_server.on("request", (request) => {
     const connexio = request.accept(null, request.origin);
     connexio.nick = ""; // Inicializar la propiedad nick en la conexión WebSocket
+    // Configurar encabezados CORS para las conexiones WebSocket
+    connexio.socket.setNoDelay(true); // Configurar sin demora
+    connexio.socket.setTimeout(3600000); // 1 hora de tiempo de espera
 
+    // Permitir solicitudes desde cualquier origen
+    connexio.socket.setHeader("Access-Control-Allow-Origin", "*");
+
+    // Configurar cabeceras necesarias para las solicitudes POST
+    connexio.socket.setHeader("Access-Control-Allow-Methods", "POST");
+
+    // Configurar cabeceras para permitir ciertos tipos de contenido
+    connexio.socket.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+    // Enviar respuesta de aprobación
+    connexio.socket.writeHead(200);
+    connexio.socket.end();
     connexio.on("message", (msg) => {
         console.log("Mensaje recibido:", msg.utf8Data);
 
