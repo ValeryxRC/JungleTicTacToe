@@ -1,0 +1,130 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    color: white;
+    padding: 1.5%;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 2%;
+    font-family: "JungleFever", cursive;
+}
+nav{
+    margin: 2%;
+    /* margin-bottom: 1%;
+    margin-top: 1%; */
+}
+body{
+    background-image: url("assets/purple-jungle.jpg");
+    background-size:cover;
+}
+#chat_contein, #chat_conteinM{
+    padding: 10px;
+}
+section{
+    display: inline-block;
+    width: 38.5%;
+    text-align: center;
+    vertical-align: top;
+}
+h4, p, label{
+    color: white;
+}
+#chat_contein h4, #chat_contein p , #chat_conteinM h4, #chat_conteinM p {
+    margin: 10px 0;
+    padding: 15px;
+    word-wrap: break-word;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    margin-top: 0;
+    padding-left: 0;
+    font-size: 15px;
+ /* Permitimos que las palabras largas se dividan en varias líneas */
+}
+#chat_contein p, #chat_conteinM p  {
+    color: black;
+    font-size: 13px;
+}
+#chat_contein div, #chat_conteinM div{
+    text-align: left;
+    padding: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.you{
+text-align: right !important;
+}
+.msg_center{
+    text-align: center !important;
+}
+.msg_center h4, .msg_center p{
+    color: gray !important;
+}
+.msg_center p {
+padding-left: 0.5%;
+}
+h1{
+    background-color: #5818458a;
+}
+#chat-part{
+    width: 60%;
+}
+#block_chat {
+    display: inline-block;
+    width: 80%; 
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #ccc;
+    background-color: white;
+    border-radius: 25px;
+}
+nav div{
+    display: inline-block;
+}
+cont_users{
+    text-align: center;
+}
+h4{
+    font-size: 20px;
+}
+.user-container  * {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.user-container{
+    padding: 10px;
+}
+.c{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: solid 2px;
+    background-size: contain;
+}
+.tablero{
+    text-align: center;
+}
+#chats-private p{
+    color: black;
+}
+#chats-private h4{
+    color: black;
+}
+#chats-private #block_chat{
+    width: 100%;
+}
+#block_chat div div{
+    padding-left: 20px;
+}
+#chats-private .you{
+    padding-right: 20px;
+}
+#ganadorMensaje, #dropMensaje{
+    color: black;
+    padding: 0;
+    margin: 0;
+}

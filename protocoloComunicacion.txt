@@ -1,0 +1,54 @@
+--------------------- TIPOS DE MENSAJES ENVIADOS Y RECIBIDOS DEL SERVIDOR ----------------------
+user_disconnected:
+    Cuando el servidor resive un mensaje del tipo user_disconnected
+    avisa a todas las conexiones socket que el usuario se a desconectado
+    enviando un mensaje del tipo broadcast.
+
+user_connected:
+    Cuando el servidor resive un mensaje del tipo user_connected
+    avisa a todas las conexiones socket que el usuario se a conectado
+    enviando un mensaje del tipo broadcast.
+
+send_all:
+    Cuando el servidor recibe un mensaje del tipo send_all
+    envia a todas las conexiones socket abiertas en el servidor
+    el mensaje que el cliente envio en tipo broadcast.
+
+broadcast:
+    El servidor al recibir un mensaje ya sea user_connected, user_disconnected,
+    send_all envia a todas las conexiones socket activas el mensaje enviado al servidor
+
+send_private:
+    Cuando el servidor recibe un mensaje del tipo send_private
+    envia al servidor el mensaje en tipo private, que el cliente envio y se lo muestra a
+    el socket destino y origen pasado por parametro
+
+private: 
+    El servidor al recibir el mensaje de tipo send_private devuelve a las dos conexiones pasadas
+    por parametro el mensaje recibido
+
+get_user_list:
+    El servidor cada vez que recibe una peticion del tipo get_user_list
+    envia un mensaje con la lista actualizada de conexiones socket activas 
+    a todos los clientes socket.
+
+list:
+    El servidor al recibir la peticion del tipo get_user_list envia a los clientes 
+    socket abiertos la lista mediante el tipo list.
+
+challenge:
+    Cuando una conexion quiere desafiar a otra a una partida envia un mensaje del tipo chachenge
+    y el servidor vuelve a reenviar el mensaje con el mismo tipo a las dos conexiones.
+    
+start_challenge:
+    Cuando el usuario que a sido retado al juego acepta el desafio, envia al servidor un mensaje del tipo
+    start_challenge para avisar a las dos conexiones mediante el servidor que la partida empieza.
+
+coordinates:
+    La conexion socket envia a el servidor las coordenates del turno mediante un mensaje del tipo coordinates
+    el servidor lo recibe y reenvia el mensaje a los dos jugadores para actualizar los turnos y movimientos
+    del juego.
+
+drop:
+    Cuando un usuario se sale del mapa o abandona la partida avisa al servidory este avisa a los dos jugadores renviando
+    el mensaje recibido
